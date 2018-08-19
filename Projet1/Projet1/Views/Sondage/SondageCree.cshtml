@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Votre sondage a été créé !</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../Content/style.css">
+
+</head>
+
+
+<body>
+    <header>
+        <img id="wolf" alt="Loup" src="../../Content/wolf.jpg" />
+        <p id=APLogo>AlphaPoll</p>
+
+    </header>
+
+
+    <h1 id="votreSondageCree"> Votre sondage a été créé !</h1>
+
+    <h2 id="conservezLesLiens"> Conservez bien les liens ci-dessous :</h2>
+
+    <!--Creation des liens de resultat, d'acces et de desactivation a partir de l'ID du sondage
+         ainsi que du GUID pour le lien de desactivation-->
+    <div id="liens">
+        <p class=lien> Accéder au sondage : <a href='/Sondage/Sondage?Id=@ViewBag.dernierIDBDD'>172.19.240.3:59213/Sondage/Sondage?Id=@ViewBag.dernierIDBDD</a> </p>
+
+        <p class=lien> Résultats du sondage : <a href='/Sondage/Resultats?Id=@ViewBag.dernierIDBDD'>172.19.240.3:59213/Sondage/Resultats?Id=@ViewBag.dernierIDBDD</a> </p>
+
+        <p class=lien> Désactivation du sondage : <a href="/Sondage/SondageDesactive?Id=@ViewBag.dernierIDBDD&key=@ViewBag.cleDesactivation">172.19.240.3:59213/Sondage/SondageDesactive?Id=@ViewBag.dernierIDBDD&key=@ViewBag.cleDesactivation</a> </p>
+    </div>
+
+
+
+
+</body>
+
+
+</html>

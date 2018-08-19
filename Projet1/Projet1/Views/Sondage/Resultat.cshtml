@@ -1,0 +1,61 @@
+﻿@model Projet1.Models.ResultatsSondage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Résultats</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../Content/style.css">
+
+</head>
+
+
+<body>
+    <header>
+        <img id="wolf" alt="Loup" src="../../Content/wolf.jpg" />
+        <p id=APLogo>AlphaPoll</p>
+
+    </header>
+
+
+    <div id="question2">
+
+        <input id="questionBox2" type="text" value="@Model.question" readonly /><br />
+        <p id="nbDeVotantsResultats">Nombre de votants : @Model.nbDeVotantsTotal</p>
+
+
+    </div>
+
+     <!--Affiche les resultats du sondage, les choix ainsi que le nombre de votant par choix-->
+    @{ int i = 0;
+        foreach (string choix in Model.IntituleChoix)
+        {
+            <div id="sectionChoixReponseResultats">
+                @choix <br />
+
+                <progress id="barre" value=@Model.NbDeVotantsParChoix[i] max=@ViewBag.nbDeVoixTotal></progress>
+                @Model.NbDeVotantsParChoix[i]
+                @{ i++;}
+            </div>
+
+        }
+
+    }
+
+
+
+
+
+    <div id="boutonSection3">
+        <input type="button" value="Retour à l'accueil" class="boutonTypique" onclick="self.location.href='/Home/Index'">
+    </div>
+
+
+
+
+</body>
+</html>
